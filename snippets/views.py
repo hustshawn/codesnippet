@@ -12,4 +12,7 @@ class SnippetListView(ListView):
 
         context = super(SnippetListView, self).get_context_data(**kwargs)
         context['snippets'] = Snippets.objects.all()
+        # for code in context['snippets']:
+        #     code.snippets = Markdown(code.snippets, extensions=['codehilite'])
+        #     assert False
         return context

@@ -1,9 +1,10 @@
+{% load markup %}
 <h1>Snippets</h1>
 
 <ul>
 {% for code in snippets %}
     <li>{{ code.desc }}</li>
-    <li>{{ code.snippets }}</li>
+    <li>{{ code.snippets | markdown2 | safe}}</li>
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
