@@ -1,11 +1,44 @@
-{% load markup %}
-<h1>Snippets</h1>
+{% load static markup gsailpygment%}
+<!DOCTYPE html>
+<html>
 
-<ul>
-{% for code in snippets %}
-    <li>{{ code.desc }}</li>
-    <li>{{ code.snippets | markdown2 | safe}}</li>
-{% empty %}
-    <li>No articles yet.</li>
-{% endfor %}
-</ul>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/monokai.css' %}">
+  <title>Code Snippets</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Snippets App</h1>
+    <ul>
+      {% for code in snippets %}
+      <h2 class="code-desc">{{ code.desc }}</h2>
+      <div class="code-block">{{ code.snippets | gsailpygment | safe }}</div>
+      {% empty %} 
+      <br>
+      <hr>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+
+</html>
+<style type="text/css">
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+}
+.code-desc {
+  margin-left: 17.4em;
+}
+.code-block {
+  margin: 0 auto;
+  width: 60%;
+  background-color: rgba(29, 30, 26, 1);
+}
+</style>

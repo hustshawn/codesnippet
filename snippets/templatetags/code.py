@@ -6,12 +6,12 @@ from pygments.formatters import HtmlFormatter
 
 register = template.Library()
 
-@register.filter()
+@register.filter(name='code')
 def do_code(parser,token):
     code = token.split_contents()[-1]
     nodelist = parser.parse(('endcode',))
     parser.delete_first_token()
-    return CodeNode(code,nodelist)
+    return CodeNode(code, nodelist)
     
 class CodeNode(template.Node):
     def __init__(self,lang,code):
