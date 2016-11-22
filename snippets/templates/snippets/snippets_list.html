@@ -1,19 +1,19 @@
-{% load static markup gsailpygment%}
+{% load static markup codesyntax%}
 <!DOCTYPE html>
 <html>
 
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'styles/monokai.css' %}">
-  <title>Code Snippets</title>
+  <title>Code Snippets Demo</title>
 </head>
 
 <body>
   <div class="container">
-    <h1 class="title">Snippets App</h1>
+    <h1 class="title">Snippets Demo</h1>
     <ul>
       {% for code in snippets %}
       <h2 class="code-desc">{{ code.desc }}</h2>
-      <div class="code-block">{{ code.snippets | gsailpygment | safe }}</div>
+      <div class="code-block">{{ code.snippets | codesyntax | safe }}</div>
       {% empty %} 
       <br>
       <hr>
@@ -34,11 +34,16 @@
   text-align: center;
 }
 .code-desc {
-  margin-left: 17.4em;
+  margin-left: 20%;
 }
 .code-block {
   margin: 0 auto;
   width: 60%;
   background-color: rgba(29, 30, 26, 1);
+}
+.highlight {
+  color: white;
+  padding: 0.1em 0 0.1em 1em;
+
 }
 </style>
