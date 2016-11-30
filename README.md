@@ -6,7 +6,7 @@
 * Prepare either a Dockerfile or a Vagrantfile for this project so that collaborators of this project can have an unified environment to work on;
 
 ## Demo
-![snippet-demo.jpeg](https://github.com/hustshawn/codesnipp/snapshot/snippet-demo.jpeg )
+![snippet-demo.jpeg](https://github.com/hustshawn/codesnippet/blob/shawn/snapshot/snippet-demo.jpeg)
 
 ## Requirement #2 
 
